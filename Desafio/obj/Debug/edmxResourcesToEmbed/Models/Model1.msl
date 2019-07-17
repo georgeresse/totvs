@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DESAFIOModelStoreContainer" CdmEntityContainer="DESAFIOEntities">
+    <EntitySetMapping Name="Tbl_Leilao">
+      <EntityTypeMapping TypeName="DESAFIOModel.Tbl_Leilao">
+        <MappingFragment StoreEntitySet="Tbl_Leilao">
+          <ScalarProperty Name="IdLeilao" ColumnName="IdLeilao" />
+          <ScalarProperty Name="DataAbertura" ColumnName="DataAbertura" />
+          <ScalarProperty Name="DataFechamento" ColumnName="DataFechamento" />
+          <ScalarProperty Name="NomeProduto" ColumnName="NomeProduto" />
+          <ScalarProperty Name="DescricaoProduto" ColumnName="DescricaoProduto" />
+          <ScalarProperty Name="ValorInicial" ColumnName="ValorInicial" />
+          <ScalarProperty Name="ValorVendido" ColumnName="ValorVendido" />
+          <ScalarProperty Name="Usado" ColumnName="Usado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Login">
+      <EntityTypeMapping TypeName="DESAFIOModel.Tbl_Login">
+        <MappingFragment StoreEntitySet="Tbl_Login">
+          <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

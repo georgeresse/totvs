@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Desafio.Models.Tbl_Leilao>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataAbertura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataFechamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoProduto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorInicial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorVendido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAbertura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataFechamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoProduto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorInicial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorVendido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdLeilao }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdLeilao }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdLeilao })
+        </td>
+    </tr>
+}
+
+</table>

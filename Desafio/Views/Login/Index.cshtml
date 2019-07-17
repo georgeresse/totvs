@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-wrap">
+    @if (TempData["usuarioousenhaerrado"] != null)
+    {
+
+
+    }
+    <div class="metro single-size red">
+        <div class="locked">
+            <i class="icon-lock"></i>
+            <span>Login</span>
+        </div>
+</div>
+@using (Html.BeginForm("Logar", "Login", FormMethod.Post, new { id = "login" }))
+{
+
+    <div class=" metro double-size green">
+        <div class="input-appned" lock-input">
+            <input type="text" class="" placeholder="Usuario" id="login" name="login" required>
+        </div>
+
+        </div>
+      <div class="metro double-size yelow">
+       <div class="input-appned" lock-input">
+       <input type= "password" class="" placeholder="Senha" id="Senha" name="senha" required>
+        </div>
+
+        </div>
+        <div class="metro single-size terques login">
+
+            <button type="submit" class="btn login btn">
+                Login
+                <i class= "icon-long-arrow-right"></i>
+          </button>
+
+            </div>
+
+}
+            
+
+
+
+
+
+
+
+

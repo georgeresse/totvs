@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DESAFIOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Leilao">
+          <Key>
+            <PropertyRef Name="IdLeilao" />
+          </Key>
+          <Property Name="IdLeilao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataAbertura" Type="date" />
+          <Property Name="DataFechamento" Type="date" />
+          <Property Name="NomeProduto" Type="nvarchar" MaxLength="50" />
+          <Property Name="DescricaoProduto" Type="nvarchar(max)" />
+          <Property Name="ValorInicial" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ValorVendido" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Usado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_Login">
+          <Key>
+            <PropertyRef Name="IdLogin" />
+          </Key>
+          <Property Name="IdLogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" />
+          <Property Name="Senha" Type="nvarchar(max)" />
+          <Property Name="DataCadastro" Type="date" />
+        </EntityType>
+        <EntityContainer Name="DESAFIOModelStoreContainer">
+          <EntitySet Name="Tbl_Leilao" EntityType="Self.Tbl_Leilao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Login" EntityType="Self.Tbl_Login" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DESAFIOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Leilao">
+          <Key>
+            <PropertyRef Name="IdLeilao" />
+          </Key>
+          <Property Name="IdLeilao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataAbertura" Type="DateTime" Precision="0" />
+          <Property Name="DataFechamento" Type="DateTime" Precision="0" />
+          <Property Name="NomeProduto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DescricaoProduto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ValorInicial" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ValorVendido" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Usado" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Tbl_Login">
+          <Key>
+            <PropertyRef Name="IdLogin" />
+          </Key>
+          <Property Name="IdLogin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Senha" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DataCadastro" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="DESAFIOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Leilao" EntityType="Self.Tbl_Leilao" />
+          <EntitySet Name="Tbl_Login" EntityType="Self.Tbl_Login" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DESAFIOModelStoreContainer" CdmEntityContainer="DESAFIOEntities">
+          <EntitySetMapping Name="Tbl_Leilao">
+            <EntityTypeMapping TypeName="DESAFIOModel.Tbl_Leilao">
+              <MappingFragment StoreEntitySet="Tbl_Leilao">
+                <ScalarProperty Name="IdLeilao" ColumnName="IdLeilao" />
+                <ScalarProperty Name="DataAbertura" ColumnName="DataAbertura" />
+                <ScalarProperty Name="DataFechamento" ColumnName="DataFechamento" />
+                <ScalarProperty Name="NomeProduto" ColumnName="NomeProduto" />
+                <ScalarProperty Name="DescricaoProduto" ColumnName="DescricaoProduto" />
+                <ScalarProperty Name="ValorInicial" ColumnName="ValorInicial" />
+                <ScalarProperty Name="ValorVendido" ColumnName="ValorVendido" />
+                <ScalarProperty Name="Usado" ColumnName="Usado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Login">
+            <EntityTypeMapping TypeName="DESAFIOModel.Tbl_Login">
+              <MappingFragment StoreEntitySet="Tbl_Login">
+                <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="DataCadastro" ColumnName="DataCadastro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
